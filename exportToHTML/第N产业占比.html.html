@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>第N产业占比.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bababa;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+第N产业占比.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!--</span>
+	<span class="s0">此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=dataset-link&amp;code=M4UwLgKglgtiD2BXMAKAZogdgYzFemABCgJSEDeAsAFCGHwAOeBhAvBTXXQDYgDmITABMAXBQC-AGk5cw8eNzwMxVWlzpgATlD4DNYgOQBDAB5RgB6WvXAAFvADuAYQJhBYMWiPdQMulL9CISMwI1APDmsuYCRNbBAxAG1A9USDAE8QI01LQgMAJgAGAEZ83IKSgGZyouKAFhqSgFZG4oA2VoB2VoAOVoBORqKh4qGygF0rdVSDQBpvQAA5QHK5QCw5QDyNQAKlQB4FQANlAHEAEQAFQBXrQFnE3OLKgDp-yUJ6q-K7y6um5_yryvfP5-Krnt-V06gK-90KQJBkMI_X-z3BdUBb3ufwByLhVwRYNedxhmJ62MI-KRxXBT2hVzaOP-kxSXDSs0AMXIrDY7A4nc53Oq4zlEnkYzmUwh1OqwoUisnCgl1a63QiVbly_HAoWkmlRGazQCQcsytnsjmdcvKrvk7kbUXVwcrpRTOSKrW0pVbOjbCE1wYKmn8PeD8uNaX6ogEoiYAIJmYAqQi0sDpBgJPLYEL8eCadKWWmYIxwQyAFz1AL9yBkCQfU6TD5kjtL42iEAElhCATGJClNppns3ltscAKSFwMtuhVqCiCiEOTKPJNJo9wjF6IgbQgCOEZLqyLTWSx-MGbhQTAgdOrujAGDyMC2MRaRAgfvTUAL4AAGSM6SQYAAQulDJpHAf13QQDADC2GE5Yjmg8DYIgS4GHeUCLgYM60rO6iqH-o6boYO57r-f7Hqe56jpoV43jY85wY-z6vh-X4_iRXAAUBIFLuQhDgZB0GwfBiGrshXCoX-MZxphu77nRR4nvAZ4XkR160keZGLk-L7INReTfg4OHrgxwHAKBLFsVBhicRY3HrrxdD8euglbgwcGadMQ6GLZolyYQmhGEIUCGXklSFD2YmEPEmBuPoy4GG6_l5PkU4GGqaHaUxKiuXQBkcSA3BoL2aHmVw3BGAARulSWHlw4GaDAIQhYY5D5eIKgAAK1Pk4jEOQQjiF2JBZX-OX_jg8BCPGll_lAbgwAAclmW6ZNk9nrgAbt4V6GE1c3THIChKCtJRlK54hIYEAb-AA3DIMDpE4wGaGAVwECgBiIAwwRuGWwCHPAu4hbkGA4MwRAoCA83uGQw3YAQwBgIQobhnW4FsIQgPuFcpiLrD8CJIU4ynVEUBoMQ0PmGjIO0mDmAQ0EsCCLpLDsATwBo1ci3cFehAANT3Nj67nZd2Q3eEADyTD4JgKDDaR97FWhdCOXkzlreoeWFdwktSylKYVWAVV5DVdUUPVaRsxTcBk8LhuxS1ovtZ13XZQFfVg4NKuq0zy1G1Twt27I8iKFA46ecb1OYMlpk9UhJCc1w-1qOI4dnRdV18-Agt_SgjB_bH1Ax8dQA 
+    ⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。 
+--&gt;</span>
+<span class="s2">&lt;!DOCTYPE </span><span class="s3">html</span><span class="s2">&gt;</span>
+<span class="s2">&lt;html </span><span class="s3">lang</span><span class="s4">=&quot;en&quot; </span><span class="s3">style</span><span class="s4">=&quot;height: 100%&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;head&gt;</span>
+  <span class="s2">&lt;meta </span><span class="s3">charset</span><span class="s4">=&quot;utf-8&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;/head&gt;</span>
+<span class="s2">&lt;body </span><span class="s3">style</span><span class="s4">=&quot;height: 100%; margin: 0&quot;</span><span class="s2">&gt;</span>
+  <span class="s2">&lt;div </span><span class="s3">id</span><span class="s4">=&quot;container&quot; </span><span class="s3">style</span><span class="s4">=&quot;height: 100%&quot;</span><span class="s2">&gt;&lt;/div&gt;</span>
+
+  
+  <span class="s2">&lt;script </span><span class="s3">type</span><span class="s4">=&quot;text/javascript&quot; </span><span class="s3">src</span><span class="s4">=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js&quot;</span><span class="s2">&gt;&lt;/script&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to dataTool extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/dataTool.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to use gl extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to echarts-stat extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to use map 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment these two lines if you want to use bmap extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://api.map.baidu.com/api?v=3.0&amp;ak=YOUR_API_KEY&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/bmap.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+
+  <span class="s2">&lt;script </span><span class="s3">type</span><span class="s4">=&quot;text/javascript&quot;</span><span class="s2">&gt;</span>
+    <span class="s1">var dom = document.getElementById('container');</span>
+    <span class="s1">var myChart = echarts.init(dom, null, {</span>
+      <span class="s1">renderer: 'canvas',</span>
+      <span class="s1">useDirtyRect: false</span>
+    <span class="s1">});</span>
+    <span class="s1">var app = {};</span>
+    
+    <span class="s1">var option;</span>
+
+    <span class="s1">setTimeout(function () {</span>
+  <span class="s1">option = {</span>
+    <span class="s1">legend: {},</span>
+    <span class="s1">tooltip: {</span>
+      <span class="s1">trigger: 'axis',</span>
+      <span class="s1">showContent: false</span>
+    <span class="s1">},</span>
+    <span class="s1">dataset: {</span>
+      <span class="s1">source: [</span>
+        <span class="s1">['year', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'],</span>
+        <span class="s1">['第一产业增加值占GDP比重', 13.9, 14.1, 13.5, 12.3, 12.3, 11.8, 11.7, 11.3, 10.7, 11.3, 11.3, 9.8, 10.4, 11.5, 11.8, 11, 10.4, 10.5, 9.4, 8.5, 8.5, 10.1, 9.6, 9.8],</span>
+        <span class="s1">['第二产业增加值占GDP比重', 49.4, 48.5, 48.4, 46, 44.8, 44.1, 44.5, 43.9, 39.4, 38.7, 40.1],</span>
+        <span class="s1">['第三产业增加值占GDP比重', 39.2, 39.8, 40.7, 43.6, 44.7, 46.5, 47, 47.6, 50.6, 51.6, 50.2]</span>
+      <span class="s1">]</span>
+    <span class="s1">},</span>
+    <span class="s1">xAxis: { </span>
+      <span class="s1">type: 'category',</span>
+      <span class="s1">name: '年份'</span>
+    <span class="s1">},</span>
+    <span class="s1">yAxis: { </span>
+      <span class="s1">gridIndex: 0,</span>
+      <span class="s1">name: '占比%'</span>
+    <span class="s1">},</span>
+    <span class="s1">grid: { top: '55%' },</span>
+    <span class="s1">series: [</span>
+      <span class="s1">{</span>
+        <span class="s1">type: 'line',</span>
+        <span class="s1">smooth: true,</span>
+        <span class="s1">seriesLayoutBy: 'row',</span>
+        <span class="s1">emphasis: { focus: 'series' }</span>
+      <span class="s1">},</span>
+      <span class="s1">{</span>
+        <span class="s1">type: 'line',</span>
+        <span class="s1">smooth: true,</span>
+        <span class="s1">seriesLayoutBy: 'row',</span>
+        <span class="s1">emphasis: { focus: 'series' }</span>
+      <span class="s1">},</span>
+      <span class="s1">{</span>
+        <span class="s1">type: 'line',</span>
+        <span class="s1">smooth: true,</span>
+        <span class="s1">seriesLayoutBy: 'row',</span>
+        <span class="s1">emphasis: { focus: 'series' }</span>
+      <span class="s1">},</span>
+      <span class="s1">{</span>
+        <span class="s1">type: 'pie',</span>
+        <span class="s1">id: 'pie',</span>
+        <span class="s1">radius: '30%',</span>
+        <span class="s1">center: ['50%', '25%'],</span>
+        <span class="s1">emphasis: {</span>
+          <span class="s1">focus: 'self'</span>
+        <span class="s1">},</span>
+        <span class="s1">label: {</span>
+          <span class="s1">formatter: '{b}: {@2012} ({d}%)'</span>
+        <span class="s1">},</span>
+        <span class="s1">encode: {</span>
+          <span class="s1">itemName: 'year',</span>
+          <span class="s1">value: '2012',</span>
+          <span class="s1">tooltip: '2012'</span>
+        <span class="s1">}</span>
+      <span class="s1">}</span>
+    <span class="s1">]</span>
+  <span class="s1">};</span>
+  <span class="s1">myChart.on('updateAxisPointer', function (event) {</span>
+    <span class="s1">const xAxisInfo = event.axesInfo[0];</span>
+    <span class="s1">if (xAxisInfo) {</span>
+      <span class="s1">const dimension = xAxisInfo.value + 1;</span>
+      <span class="s1">myChart.setOption({</span>
+        <span class="s1">series: {</span>
+          <span class="s1">id: 'pie',</span>
+          <span class="s1">label: {</span>
+            <span class="s1">formatter: '{b}: {@[' + dimension + ']} ({d}%)'</span>
+          <span class="s1">},</span>
+          <span class="s1">encode: {</span>
+            <span class="s1">value: dimension,</span>
+            <span class="s1">tooltip: dimension</span>
+          <span class="s1">}</span>
+        <span class="s1">}</span>
+      <span class="s1">});</span>
+    <span class="s1">}</span>
+  <span class="s1">});</span>
+  <span class="s1">myChart.setOption(option);</span>
+<span class="s1">});</span>
+
+    <span class="s1">if (option &amp;&amp; typeof option === 'object') {</span>
+      <span class="s1">myChart.setOption(option);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">window.addEventListener('resize', myChart.resize);</span>
+  <span class="s2">&lt;/script&gt;</span>
+<span class="s2">&lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span></pre>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>情绪走向.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bababa;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+情绪走向.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!--</span>
+	<span class="s0">此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=radar&amp;code=PYBwLglsB2AEC8sDeBYAULWkwBsCmAXMuppmHgB5hEDkAjHQLR0BMgEOaCjBoPiGgfAqCIKjRKwAvgBoh-AOZ5oAEyKoMpWQEMwKogG0aAQRw5gAYzV5ZsAEIBXWdLA1RsXYbCWVOWAGUQM2RGiSaAF0hMSEAJxVVMIUhTD9fYzBgaNhNWNIkWGgVAFtCR0A9WMAbI3tYHJUKIgAWAAY6mpFxJVJkLNz8mkAmg0ASeVLyytha-sb0zEzsvNpAHNVAMoM-iur6htDmjLbJx0ASQ0AkA3mBobqR1bH1jsApg0BxTT3F4ZWWk4mOwBjlQDcDa8Glo_vWx9pABQNAOcG7wOyyaLUCYNIAGcABYqby0QwQMKGfClAD06NggHvlQCncoBv20ABUqwWHwvCwQB6OoByA0ApuaAcGNAFnagHe0wB98YA_tUAIW6AI31AG1O6ShIBwEDAOjCeA0xGOJJhwAA7kQAGZuKF4dJ3aGC4UAGT8-UU3yF0DwHjAAE98DEpZhDMADCkaABiOoAMWddRosExsEAfdGAO39WZzAGBKgBS0wD9foAcjMATkGALjlAP9-kdGIjVIUhKrCEDwUK06X191-jisNjwYFgADcoSTvHI_AFIS0zQjHBEovZE6p1NmrZLvi1S25LPlNABmKoATgA7KOHJOAKwsBwANgAHDUhw4Z-OWEuHEPl1PYEON9vYEutxDEy187p9EYTGZC7ZW13MCoxSoTea9Rf7ja7bQwpIABGKgABQ1A4LAzjODjgbANQAHQzgAlB6Xp-oA1hqAKKKUZxpGgAw_4AZHqAJDmgDwCYAcGaAGV636YOqPawIaxpmha3Z0aQv7JLQTo1K67qelifqhoAhuY4fG1FJl2tGkMEqzCEI0nCAA3EAA 
+    ⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。 
+--&gt;</span>
+<span class="s2">&lt;!DOCTYPE </span><span class="s3">html</span><span class="s2">&gt;</span>
+<span class="s2">&lt;html </span><span class="s3">lang</span><span class="s4">=&quot;en&quot; </span><span class="s3">style</span><span class="s4">=&quot;height: 100%&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;head&gt;</span>
+  <span class="s2">&lt;meta </span><span class="s3">charset</span><span class="s4">=&quot;utf-8&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;/head&gt;</span>
+<span class="s2">&lt;body </span><span class="s3">style</span><span class="s4">=&quot;height: 100%; margin: 0&quot;</span><span class="s2">&gt;</span>
+  <span class="s2">&lt;div </span><span class="s3">id</span><span class="s4">=&quot;container&quot; </span><span class="s3">style</span><span class="s4">=&quot;height: 100%&quot;</span><span class="s2">&gt;&lt;/div&gt;</span>
+
+  
+  <span class="s2">&lt;script </span><span class="s3">type</span><span class="s4">=&quot;text/javascript&quot; </span><span class="s3">src</span><span class="s4">=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js&quot;</span><span class="s2">&gt;&lt;/script&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to dataTool extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/dataTool.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to use gl extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to echarts-stat extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to use map 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment these two lines if you want to use bmap extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://api.map.baidu.com/api?v=3.0&amp;ak=YOUR_API_KEY&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/bmap.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+
+  <span class="s2">&lt;script </span><span class="s3">type</span><span class="s4">=&quot;text/javascript&quot;</span><span class="s2">&gt;</span>
+    <span class="s1">var dom = document.getElementById('container');</span>
+    <span class="s1">var myChart = echarts.init(dom, null, {</span>
+      <span class="s1">renderer: 'canvas',</span>
+      <span class="s1">useDirtyRect: false</span>
+    <span class="s1">});</span>
+    <span class="s1">var app = {};</span>
+    
+    <span class="s1">var option;</span>
+
+    <span class="s1">option = {</span>
+  <span class="s1">title: {</span>
+    <span class="s1">text: '11-12月情感倾向'</span>
+  <span class="s1">},</span>
+  <span class="s1">legend: {</span>
+    <span class="s1">data: ['Allocated Budget', 'Actual Spending']</span>
+  <span class="s1">},</span>
+  <span class="s1">radar: {</span>
+    <span class="s1">indicator: [</span>
+      <span class="s1">{ name: '赞扬', max: 40000 },</span>
+      <span class="s1">{ name: '悲伤', max: 40000 },</span>
+      <span class="s1">{ name: '喜悦', max: 40000 },</span>
+      <span class="s1">{ name: '愤怒', max: 40000 },</span>
+      <span class="s1">{ name: '惊奇', max: 40000 },</span>
+      <span class="s1">{ name: '厌恶', max: 40000 },</span>
+      <span class="s1">{ name: '恐惧', max: 40000 },</span>
+    <span class="s1">],</span>
+    <span class="s1">shape: 'circle', // 可以添加 shape 属性来指定雷达图的形状</span>
+    <span class="s1">splitArea: {</span>
+      <span class="s1">show: false</span>
+    <span class="s1">},</span>
+    <span class="s1">splitLine: {</span>
+      <span class="s1">lineStyle: {</span>
+        <span class="s1">color: '#00FF00' // 设置雷达图的分隔线颜色为绿色</span>
+      <span class="s1">}</span>
+    <span class="s1">}</span>
+  <span class="s1">},</span>
+  <span class="s1">series: [</span>
+    <span class="s1">{</span>
+      <span class="s1">name: 'Budget vs spending',</span>
+      <span class="s1">type: 'radar',</span>
+      <span class="s1">data: [</span>
+        <span class="s1">{</span>
+          <span class="s1">value: [34979, 7952, 6803, 5728, 3689, 3578, 828],</span>
+          <span class="s1">name: 'Allocated Budget',</span>
+          <span class="s1">areaStyle: {</span>
+            <span class="s1">color: 'rgba(0, 255, 0, 0.5)' // 设置填充颜色为绿色，带有透明度</span>
+          <span class="s1">},</span>
+          <span class="s1">lineStyle: {</span>
+            <span class="s1">color: '#00FF00' // 设置线条颜色为绿色</span>
+          <span class="s1">}</span>
+        <span class="s1">},</span>
+      <span class="s1">]</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">};</span>
+
+
+    <span class="s1">if (option &amp;&amp; typeof option === 'object') {</span>
+      <span class="s1">myChart.setOption(option);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">window.addEventListener('resize', myChart.resize);</span>
+  <span class="s2">&lt;/script&gt;</span>
+<span class="s2">&lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span></pre>
+</body>
+</html>

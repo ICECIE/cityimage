@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>GDP与人均GDP.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #d5b778;}
+.s3 { color: #bababa;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GDP与人均GDP.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!--</span>
+	<span class="s0">此示例下载自 https://echarts.apache.org/examples/zh/editor.html?c=line-smooth&amp;code=PYBwLglsB2AEC8sDeBYAULWkwBsCmAXMuppmHgB5hEDkggsqAMGoEB6gMSqBm1oJI2TgYcqAueoKbmgLrlA4uoBxACIAFQCvWgYPiaAGhKlyVAMpgAnviKoMpTADMYYNRABehWAEYALEv0GAxsBzAATrQDEAZj81lTABfBwMQAEMAE0iIaABzIgBtawAGBVg0jPSUgF1MAHp82EBgGMAXU0BwC0AMjMA4OUA_tUALCMAQt0Bd2MBuz2UQ5QoAQQoIAGddQKxNECsaJ3DyOI9NRWHIqfCkmmsATg3FWBoAJhT9rd3960O9lJ3T_Z9LlNsbgFYbgDYbgHYbgA4btcvU35P0kdrBdAXtrNdQSk7L9HpDrC84e84V84T9IXtLjsAds9jsLjkOqFYJpegMho4RmNaAA3cI4ACueAC-k6-jAwFckBA5IMYHcEDicTwnm24T6_XmFLFA0kwFi5BFegMZFG4yc7mA_QlwyChOU-CF0EiPNIizAy1giXozEAFoq8CSSfKAYWVAOBygGFFQ6MJh2kQO_IewGcb28X1Sf00HJEzAAI2AYHZAFsiKkCkUyga8EbAAxKDUAqXqAC4SWu0WUT-sKIHhBpbhkrlWaLYlhgZ4R8ngA6PE7dLWD5Qjv3V7pPY-WxtnxPD5DvzWNuvV73Ie2e4pNu2D5rIdrHZrNtQp7pHwpJ7tnwHnwfUfWKPK2zWaz3NtX2Br147-ywe73dar9KvEej09YAvNYfDbBdYDWe5bFeNtJxsFIL1AwcbD2EDH27HxhzA89r2bJcdlHD5wPhY8YJ2T9u1bHwH1efdYDBHYyPWJdKLWO9YK_Id4R8HdezgnZD1sdsPibWBI1ErQqW2aNwncSVlVgaBwgTcYvTtP1XQ9HVr1rAx6ySWw1lsQD7ieFJAKeTCu1gV4BOs-cPmstZzI3CDjOs1JbDxbtGMPbtlw2btXluOi8R8axkPInjQovXsDzxCjYGoj5WwPZz13SLy50yNdHOQqCnh7dJ7jYyzivnOd0gnHxX1_HYUp2cSKRVKSaBkuTcMU5TVNtEMxDDLSKVZAxdNNJYknBVsPNsaDAPhZcnwirdkPWe4cPogTXn4p5TOQw9eyfccjzgpchLo-4CI-J8B17cDjy_eynjWVKgLMux0jWed1tSFJXne-DX3OHyELimxksqmwlyg4jDxK1zwQuziwbnWymoUyTxna-TlSUlTaCDH1-sdQaDF1fQCTQIIAG4gA 
+    ⚠ 请注意，该图表不是 Apache ECharts 官方示例，而是由用户代码生成的。请注意鉴别其内容。 
+--&gt;</span>
+<span class="s2">&lt;!DOCTYPE </span><span class="s3">html</span><span class="s2">&gt;</span>
+<span class="s2">&lt;html </span><span class="s3">lang</span><span class="s4">=&quot;en&quot; </span><span class="s3">style</span><span class="s4">=&quot;height: 100%&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;head&gt;</span>
+  <span class="s2">&lt;meta </span><span class="s3">charset</span><span class="s4">=&quot;utf-8&quot;</span><span class="s2">&gt;</span>
+<span class="s2">&lt;/head&gt;</span>
+<span class="s2">&lt;body </span><span class="s3">style</span><span class="s4">=&quot;height: 100%; margin: 0&quot;</span><span class="s2">&gt;</span>
+  <span class="s2">&lt;div </span><span class="s3">id</span><span class="s4">=&quot;container&quot; </span><span class="s3">style</span><span class="s4">=&quot;height: 100%&quot;</span><span class="s2">&gt;&lt;/div&gt;</span>
+
+  
+  <span class="s2">&lt;script </span><span class="s3">type</span><span class="s4">=&quot;text/javascript&quot; </span><span class="s3">src</span><span class="s4">=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/echarts.min.js&quot;</span><span class="s2">&gt;&lt;/script&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to dataTool extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/dataTool.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to use gl extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts-gl/2/files/dist/echarts-gl.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to echarts-stat extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts-stat/latest/files/dist/ecStat.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment this line if you want to use map 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/4.9.0/files/map/js/china.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/4.9.0/files/map/js/world.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+  <span class="s0">&lt;!-- Uncomment these two lines if you want to use bmap extension 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://api.map.baidu.com/api?v=3.0&amp;ak=YOUR_API_KEY&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;https://registry.npmmirror.com/echarts/5.4.3/files/dist/extension/bmap.min.js&quot;&gt;&lt;/script&gt; 
+  --&gt;</span>
+
+  <span class="s2">&lt;script </span><span class="s3">type</span><span class="s4">=&quot;text/javascript&quot;</span><span class="s2">&gt;</span>
+    <span class="s1">var dom = document.getElementById('container');</span>
+    <span class="s1">var myChart = echarts.init(dom, null, {</span>
+      <span class="s1">renderer: 'canvas',</span>
+      <span class="s1">useDirtyRect: false</span>
+    <span class="s1">});</span>
+    <span class="s1">var app = {};</span>
+    
+    <span class="s1">var option;</span>
+
+    <span class="s1">option = {</span>
+  <span class="s1">title: {</span>
+    <span class="s1">text: '十堰市和武汉市历年来人均GDP比较',</span>
+    <span class="s1">textStyle: {</span>
+      <span class="s1">fontSize: 14,</span>
+      <span class="s1">color: '#333'</span>
+    <span class="s1">},</span>
+    <span class="s1">padding: [10, 0, 0, 0]  // 调整标题与图表的距离</span>
+  <span class="s1">},</span>
+  <span class="s1">xAxis: {</span>
+    <span class="s1">type: 'category',</span>
+    <span class="s1">data: ['1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022']</span>
+  <span class="s1">},</span>
+  <span class="s1">yAxis: {</span>
+    <span class="s1">type: 'value'</span>
+  <span class="s1">},</span>
+  <span class="s1">tooltip: {</span>
+    <span class="s1">trigger: 'axis',</span>
+    <span class="s1">axisPointer: {</span>
+      <span class="s1">type: 'cross'</span>
+    <span class="s1">}</span>
+  <span class="s1">},</span>
+  <span class="s1">legend: {</span>
+    <span class="s1">data: ['十堰市全年GDP/千万元', '十堰市全年人均GDP/元', '武汉市全年人均GDP/元'],</span>
+    <span class="s1">bottom: 10  // 调整legend到图表底部的距离</span>
+  <span class="s1">},</span>
+  <span class="s1">series: [</span>
+    <span class="s1">{</span>
+      <span class="s1">data: [</span>
+        <span class="s1">1686.222, 1801.257, 2034.368, 2331.775, 2450.489, 2929.016, 3066.3, 3384.1,</span>
+        <span class="s1">4115.1, 4879.4, 5519.4, 7344.3, 8493.5, 9547.8, 10843.7, 12093.1, 13203.538,</span>
+        <span class="s1">14524.85, 16667.255, 18635.76, 20127.21945, 18911.851, 21639.808, 23046.8</span>
+      <span class="s1">],</span>
+      <span class="s1">type: 'bar',</span>
+      <span class="s1">name: '十堰市全年GDP/千万元'</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">data: [4943, 5603, 6322, 7232, 7582, 9039, 9432, 10422, 12730, 15099, 17046, 22317, 25396, 28480, 32255, 35886, 39089, 42770, 48827, 54618, 59163, 57577, 68379, 72882],</span>
+      <span class="s1">type: 'bar',</span>
+      <span class="s1">name: '十堰市全年人均GDP/元'</span>
+    <span class="s1">},</span>
+    <span class="s1">{</span>
+      <span class="s1">data: [13862, 14473, 16501, 17927, 19538, 22378, 26567, 30801, 36068, 45466, 52481, 57805, 66512, 76986, 86014, 97538, 100714, 107902, 120880, 135877, 145545, 130599, 135251, 137772],</span>
+      <span class="s1">type: 'bar',</span>
+      <span class="s1">name: '武汉市全年人均GDP/元'</span>
+    <span class="s1">}</span>
+  <span class="s1">]</span>
+<span class="s1">};</span>
+
+    <span class="s1">if (option &amp;&amp; typeof option === 'object') {</span>
+      <span class="s1">myChart.setOption(option);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">window.addEventListener('resize', myChart.resize);</span>
+  <span class="s2">&lt;/script&gt;</span>
+<span class="s2">&lt;/body&gt;</span>
+<span class="s2">&lt;/html&gt;</span></pre>
+</body>
+</html>

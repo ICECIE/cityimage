@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>正式完成版.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+正式完成版.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!doctype </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+<span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;utf-8&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;title&gt;</span><span class="s1">index</span><span class="s0">&lt;/title&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;js/jquery.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;link </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">href</span><span class="s3">=&quot;css/comon0.css&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+	<span class="s0">&lt;script&gt;</span>
+	<span class="s1">$(window).load(function(){  </span>
+             <span class="s1">$(&quot;.loading&quot;).fadeOut()</span>
+            <span class="s1">})  </span>
+			
+<span class="s1">/****/</span>
+<span class="s1">$(document).ready(function(){</span>
+	<span class="s1">var whei=$(window).width()</span>
+	<span class="s1">$(&quot;html&quot;).css({fontSize:whei/20})</span>
+	<span class="s1">$(window).resize(function(){</span>
+		<span class="s1">var whei=$(window).width()</span>
+	 <span class="s1">$(&quot;html&quot;).css({fontSize:whei/20})</span>
+<span class="s1">});</span>
+	<span class="s1">});</span>
+	<span class="s0">&lt;/script&gt;</span>
+	<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;js/echarts.min.js&quot;</span><span class="s0">&gt;&lt;/script&gt; </span>
+	<span class="s0">&lt;script </span><span class="s2">language</span><span class="s3">=&quot;JavaScript&quot; </span><span class="s2">src</span><span class="s3">=&quot;js/js.js&quot;</span><span class="s0">&gt;&lt;/script&gt; </span>
+<span class="s0">&lt;body&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;canvas&quot; </span><span class="s2">style</span><span class="s3">=&quot;opacity: .2&quot;</span><span class="s0">&gt;</span>
+	<span class="s0">&lt;iframe </span><span class="s2">frameborder</span><span class="s3">=&quot;0&quot; </span><span class="s2">src</span><span class="s3">=&quot;js/index.html&quot; </span><span class="s2">style</span><span class="s3">=&quot;width: 100%; height: 100%&quot;</span><span class="s0">&gt;&lt;/iframe&gt;</span>
+	<span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;loading&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;loadbox&quot;</span><span class="s0">&gt; &lt;img </span><span class="s2">src</span><span class="s3">=&quot;picture/loading.gif&quot;</span><span class="s0">&gt; </span><span class="s1">页面加载中... </span><span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;head&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;h1&gt;</span><span class="s1">十堰市城市形象大屏</span><span class="s0">&lt;/h1&gt;</span>
+  <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;weather&quot;</span><span class="s0">&gt;</span><span class="s4">&lt;!--&lt;img src=&quot;picture/weather.png&quot;&gt;&lt;span&gt;多云转小雨&lt;/span&gt;--&gt;</span><span class="s0">&lt;span </span><span class="s2">id</span><span class="s3">=&quot;showTime&quot;</span><span class="s0">&gt;&lt;/span&gt;&lt;/div&gt;</span>
+	
+	<span class="s0">&lt;script&gt;</span>
+<span class="s1">var t = null;</span>
+    <span class="s1">t = setTimeout(time,1000);//開始运行</span>
+    <span class="s1">function time()</span>
+    <span class="s1">{</span>
+       <span class="s1">clearTimeout(t);//清除定时器</span>
+       <span class="s1">dt = new Date();</span>
+		<span class="s1">var y=dt.getFullYear();</span>
+		<span class="s1">var mt=dt.getMonth()+1;</span>
+		<span class="s1">var day=dt.getDate();</span>
+       <span class="s1">var h=dt.getHours();//获取时</span>
+       <span class="s1">var m=dt.getMinutes();//获取分</span>
+       <span class="s1">var s=dt.getSeconds();//获取秒</span>
+       <span class="s1">document.getElementById(&quot;showTime&quot;).innerHTML = y+&quot;年&quot;+mt+&quot;月&quot;+day+&quot;-&quot;+h+&quot;时&quot;+m+&quot;分&quot;+s+&quot;秒&quot;;</span>
+       <span class="s1">t = setTimeout(time,1000); //设定定时器，循环运行     </span>
+    <span class="s1">} </span>
+
+<span class="s0">&lt;/script&gt;</span>
+	
+	
+<span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;mainbox&quot;</span><span class="s0">&gt;</span>
+  <span class="s0">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;clearfix&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;li&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height: 4.6rem&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">十堰市和武汉市历年来人均GDP比较</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart1&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height: 6.2rem&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">十堰市历年各产业增值占GDP比重</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart2&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height: 5.2rem&quot;</span><span class="s0">&gt;</span>
+         <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">十堰市历年各类学校数量</span><span class="s0">&lt;/div&gt;</span>
+             <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart3&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+		  <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;</span>
+
+		  <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/li&gt;</span>
+    <span class="s0">&lt;li&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;bar&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;barbox&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;clearfix&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;pulll_left counter&quot;</span><span class="s0">&gt;</span><span class="s1">23046800</span><span class="s0">&lt;/li&gt;</span>
+            <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;pulll_left counter&quot;</span><span class="s0">&gt;</span><span class="s1">72882</span><span class="s0">&lt;/li&gt;</span>
+          <span class="s0">&lt;/ul&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;barbox2&quot;</span><span class="s0">&gt;</span>
+          <span class="s0">&lt;ul </span><span class="s2">class</span><span class="s3">=&quot;clearfix&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;pulll_left&quot;</span><span class="s0">&gt;</span><span class="s1">2022年GDP总量情况/万 </span><span class="s0">&lt;/li&gt;</span>
+            <span class="s0">&lt;li </span><span class="s2">class</span><span class="s3">=&quot;pulll_left&quot;</span><span class="s0">&gt;</span><span class="s1">2022年人均GDP情况/元</span><span class="s0">&lt;/li&gt;</span>
+          <span class="s0">&lt;/ul&gt;</span>
+        <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;map&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;map1&quot;</span><span class="s0">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot;picture/lbx.png&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;map2&quot;</span><span class="s0">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot;picture/jt.png&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;map3&quot;</span><span class="s0">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot;picture/map.png&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;map4&quot; </span><span class="s2">id</span><span class="s3">=&quot;map_1&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height: 7.4rem&quot;</span><span class="s0">&gt;</span>
+         <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">十堰市历年舆情主题</span><span class="s0">&lt;/div&gt;</span>
+             <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart7&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+            <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+		  <span class="s0">&lt;/div&gt;</span>
+    <span class="s0">&lt;/li&gt;</span>
+    <span class="s0">&lt;li&gt;</span>
+          <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height:5.4rem&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">近30天十堰市舆情情感倾向</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart4&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height: 3.2rem&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">近30天十堰市舆情态度倾向</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart5&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+      <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxall&quot; </span><span class="s2">style</span><span class="s3">=&quot;height: 7.35rem&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;alltitle&quot;</span><span class="s0">&gt;</span><span class="s1">十堰市森林覆盖率</span><span class="s0">&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;allnav&quot; </span><span class="s2">id</span><span class="s3">=&quot;echart6&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+        <span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;boxfoot&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+      <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s0">&lt;/li&gt;</span>
+  <span class="s0">&lt;/ul&gt;</span>
+<span class="s0">&lt;/div&gt;</span>
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s3">=&quot;back&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+
+<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;js/china.js&quot;</span><span class="s0">&gt;&lt;/script&gt; </span>
+<span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s2">src</span><span class="s3">=&quot;js/area_echarts.js&quot;</span><span class="s0">&gt;&lt;/script&gt; </span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>
